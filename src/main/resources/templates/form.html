@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Vuelo</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #74ebd5, #9face6);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        background-color: white;
+        padding: 2rem 3rem;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        width: 380px;
+        animation: fadeIn 0.8s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: #444;
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: 0.2s ease;
+      }
+
+      input:focus {
+        border-color: #5c6bc0;
+        outline: none;
+        box-shadow: 0 0 5px rgba(92, 107, 192, 0.5);
+      }
+
+      button {
+        width: 100%;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      button:hover {
+        background: linear-gradient(90deg, #5c6bc0, #6a1b9a);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h2>Formulario de Compra de Boleto</h2>
+
+      <form th:action="@{/preview}" th:object="${ticket}" method="post">
+        <label>Nombre completo:</label>
+        <input type="text" th:field="*{nombreCompleto}" required />
+
+        <label>Número de asiento:</label>
+        <input type="text" th:field="*{numeroAsiento}" required />
+
+        <label>Clase de boleto:</label>
+        <input type="text" th:field="*{claseBoleto}" required />
+
+        <label>Aerolínea:</label>
+        <input type="text" th:field="*{aerolinea}" required />
+
+        <label>Fecha y hora de vuelo:</label>
+        <input type="datetime-local" th:field="*{fechaHoraVuelo}" required />
+
+        <label>Punto de origen:</label>
+        <input type="text" th:field="*{puntoOrigen}" required />
+
+        <label>Punto de destino:</label>
+        <input type="text" th:field="*{puntoDestino}" required />
+
+        <label>Identificador único:</label>
+        <input type="text" th:field="*{identificadorBoleto}" required />
+
+        <button type="submit">Vista previa</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Vista Previa de Boleta</title>
+    <link rel="stylesheet" th:href="@{/css/estilos-boleto.css}" />
+  </head>
+  <body>
+    <h2>Vista Previa del Boleto</h2>
+
+    <p>
+      <strong>Nombre:</strong> <span th:text="${ticket.nombreCompleto}"></span>
+    </p>
+    <p>
+      <strong>Asiento:</strong> <span th:text="${ticket.numeroAsiento}"></span>
+    </p>
+    <p><strong>Clase:</strong> <span th:text="${ticket.claseBoleto}"></span></p>
+    <p>
+      <strong>Aerolínea:</strong> <span th:text="${ticket.aerolinea}"></span>
+    </p>
+    <p>
+      <strong>Fecha y Hora:</strong>
+      <span th:text="${ticket.fechaHoraVuelo}"></span>
+    </p>
+    <p>
+      <strong>Origen:</strong> <span th:text="${ticket.puntoOrigen}"></span>
+    </p>
+    <p>
+      <strong>Destino:</strong> <span th:text="${ticket.puntoDestino}"></span>
+    </p>
+    <p>
+      <strong>ID Boleto:</strong>
+      <span th:text="${ticket.identificadorBoleto}"></span>
+    </p>
+
+    <br />
+    <form th:action="@{/download}" method="get">
+      <input type="hidden" th:field="*{ticket}" />
+      <button type="submit">Descargar PDF</button>
+    </form>
+  </body>
+</html>
