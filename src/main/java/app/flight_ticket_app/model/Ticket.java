@@ -1,6 +1,17 @@
 package app.flight_ticket_app.model;
 
+import jakarta.persistence.Entity; // Importante: usar jakarta.persistence para Spring Boot 3+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity // <--- Indica que esta clase es una entidad JPA (una tabla en la DB)
 public class Ticket {
+
+    @Id // <--- Marca el campo como clave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // <--- Configura la auto-generación del ID por la DB
+    private Long id; // El ID es necesario para JPA
+
     private String nombreCompleto;
     private String numeroAsiento;
     private String claseBoleto;
@@ -9,6 +20,14 @@ public class Ticket {
     private String puntoOrigen;
     private String puntoDestino;
     private String identificadorBoleto;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNombreCompleto() {
         return nombreCompleto;

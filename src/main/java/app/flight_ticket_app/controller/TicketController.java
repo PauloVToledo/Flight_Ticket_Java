@@ -35,6 +35,8 @@ public class TicketController {
     @GetMapping("/download")
     public void downloadPdf(@ModelAttribute("ticket") Ticket ticket, HttpServletResponse response, SessionStatus status)
             throws IOException {
+
+        pdfService.generatePdf(ticket, response.getOutputStream()); // <-- La lógica de guardado está aquí
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "attachment; filename=boleta.pdf");
         pdfService.generatePdf(ticket, response.getOutputStream());
