@@ -3,6 +3,19 @@
   <head>
     <title>Vista Previa de Boleta</title>
     <link rel="stylesheet" th:href="@{/css/estilos-boleto.css}" />
+    <style>
+      /* Estilos para alinear los botones */
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Espacio entre los botones */
+        margin-top: 20px;
+      }
+      .button-container form,
+      .button-container a {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <h2>Vista Previa del Boleto</h2>
@@ -32,10 +45,14 @@
       <span th:text="${ticket.identificadorBoleto}"></span>
     </p>
 
-    <br />
-    <form th:action="@{/download}" method="get">
-      <input type="hidden" th:field="*{ticket}" />
-      <button type="submit">Comprar Boleto</button>
-    </form>
+    <div class="button-container">
+      <!-- Botón para Cancelar Compra -->
+      <a th:href="@{/}"><button type="button">Cancelar Compra</button></a>
+
+      <!-- Botón para Finalizar Compra -->
+      <form th:action="@{/download}" method="get">
+        <button type="submit">Finalizar Compra</button>
+      </form>
+    </div>
   </body>
 </html>
