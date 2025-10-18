@@ -30,3 +30,19 @@
 2.  **Improve Form Usability**:
     *   Set sensible default values for form fields (e.g., the current date for the departure date).
     *   Add client-side validation with HTML5 attributes (`required`, `pattern`, etc.) for instant feedback.
+
+
+_________________________________
+Mis ideas:
+
+1- Hacer selectores de asiento, boleto, aerolinea, punto de origen y destino.
+2- Eliminar el identificar único como campo de relleno y entregar un hashing irrepetible
+    acotado a 9 números separados por guión.
+3- Crear estadística tipo dashboard de compras más frecuentes.
+4- Incorporar un simulador de comprar, para generar datos sintéticos para la base de datos.
+5- Mejorar estética para que se vea más profesional.
+6- Al finalizar la compra muestra en pantalla un alert de JavaScript de compra exitosa,
+    un resumen de la compra y un botón para volver al menú de compra layout.
+7- Cambiar el formato de muestra de vista previa del boleto para que se vea más amigable al usuario.
+8- Dar colores a los botones de comprar y cancelar compra.
+9- Implementar buenas prácticas evidentes para el proyecto. (Separar estilos de html, etc).
