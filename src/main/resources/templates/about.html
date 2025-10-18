@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Acerca de FlightApp</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #74ebd5, #9face6);
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .navbar-nav {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item a {
+        text-decoration: none;
+        color: #444;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .nav-item a:hover,
+      .nav-item a.active {
+        background-color: #667eea;
+        color: white;
+      }
+
+      .main-content {
+        display: flex;
+        justify-content: center;
+        padding: 4rem 2rem;
+      }
+
+      .content-container {
+        background-color: white;
+        padding: 2rem 3rem;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 100%;
+        animation: fadeIn 0.8s ease;
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        color: #555;
+        margin-bottom: 1rem;
+      }
+
+      strong {
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="/" class="navbar-brand">FlightApp</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="/">Comprar Boleto</a>
+        </li>
+        <li class="nav-item"><a href="/about" class="active">Más...</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <div class="content-container">
+        <h2>Acerca de FlightApp</h2>
+        <p>
+          <strong>FlightApp</strong> es una aplicación web para simular el
+          proceso de compra de un boleto de avión.
+        </p>
+        <p>
+          El objetivo principal de este proyecto es mostrar un flujo de trabajo,
+          desde que el usuario completa un formulario con los datos de su vuelo
+          hasta la generación y descarga de un boleto en formato PDF.
+        </p>
+        <p>
+          En la construcción de esta APP, se ponen en práctica tecnologías como:
+        </p>
+        <ul>
+          <li>
+            <strong>Spring Boot:</strong> Para el backend y la lógica de
+            negocio.
+          </li>
+          <li>
+            <strong>Thymeleaf:</strong> Para la renderización dinámica de las
+            páginas HTML.
+          </li>
+          <li>
+            <strong>JPA/Hibernate:</strong> Para la persistencia de datos en una
+            base de datos PostgreSQL.
+          </li>
+          <li>
+            <strong>OpenPDF:</strong> Para la generación de documentos PDF al
+            momento.
+          </li>
+        </ul>
+        <p>
+          Proyecto sujeto a implementación de nuevas funcionalidades de manera
+          gradual.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

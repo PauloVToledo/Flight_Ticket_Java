@@ -1,0 +1,41 @@
+### Recomendaciones a Corto Plazo (Fáciles de implementar)
+
+1.  **Mejorar UI/UX**:
+    *   Integrar un framework de CSS como Bootstrap o Tailwind CSS para un diseño más moderno y responsivo.
+    *   Añadir feedback amigable para el usuario, como mensajes de confirmación después de enviar formularios.
+    *   Implementar un mejor selector de fecha/hora para una experiencia de usuario más fluida.
+
+2.  **Añadir Validaciones**:
+    *   Implementar validación en el backend en tu modelo `Ticket` para asegurar la integridad de los datos (ej. fechas de vuelo futuras, formato correcto del número de asiento).
+    *   Añadir validación en el frontend para feedback inmediato al usuario.
+
+3.  **Listar Todos los Boletos**:
+    *   Crear una nueva página para mostrar todos los boletos de la base de datos en una tabla estructurada.
+    *   Añadir un enlace de navegación a esta nueva página.
+
+### Recomendaciones a Mediano Plazo (Complejidad media)
+
+4.  **Búsqueda y Filtro**:
+    *   En la página de listado de boletos, añadir una barra de búsqueda para encontrar boletos por varios criterios (nombre, destino, etc.).
+    *   Implementar filtros por rangos de fechas, aerolíneas y más.
+
+5.  **Notificaciones por Email**:
+    *   Integrar un servicio de email (ej. SendGrid, Mailgun) para enviar automáticamente a los usuarios sus boletos en PDF al crearlos.
+
+6.  **Autenticación de Usuarios**:
+    *   Añadir Spring Security para registro de usuarios, login y acceso basado en roles.
+    *   Asociar boletos con cuentas de usuario para que los usuarios solo puedan ver sus propios boletos.
+
+### Recomendaciones a Largo Plazo (Difíciles de implementar)
+
+7.  **Panel de Administración**:
+    *   Desarrollar un rol de administrador con privilegios para gestionar todos los usuarios y boletos, incluyendo crearlos, editarlos y eliminarlos.
+
+8.  **Integración de Pagos**:
+    *   Incorporar una pasarela de pagos como Stripe o PayPal para gestionar la compra de boletos, facturación y reembolsos.
+
+9.  **Selección Interactiva de Asientos**:
+    *   Crear un mapa visual de asientos para cada vuelo, permitiendo a los usuarios seleccionar sus asientos de forma interactiva. Esto requeriría gestionar la disponibilidad de asientos en tiempo real.
+
+10. **API REST**:
+    *   Desarrollar una API REST para exponer los servicios de tu aplicación, permitiendo la integración con otras plataformas como aplicaciones móviles.
